@@ -1,9 +1,9 @@
 # docker-compose_wordpress
 dockerによる開発環境_wordpress
 
-# 前提条件
-docker for Mac インストール済  
-docker-composeインストール出来るPC
+# 前提条件(Mac)
+docker for Mac
+docker-composeインストール
 
 # docker_image
 apache2  
@@ -12,17 +12,11 @@ wordpress:latest
 mysql:5.7
 
 # database接続方法
-ルートディレクトリに「.env」ファイルを作成し以下をコピペする(DB名、ユーザー名、PASSは任意に書き換えてください。)  
-```.env
-WORDPRESS_DB_NAME=wordpress  
-WORDPRESS_DB_USER=wp_user  
-WORDPRESS_DB_PASSWORD=hogehoge  
-  
-MYSQL_RANDOM_ROOT_PASSWORD=yes  
-MYSQL_DATABASE=wordpress  
-MYSQL_USER=wp_user  
-MYSQL_PASSWORD=hogehoge
-```
+ymlファイル内の以下を任意で書き換えてください。
+```10行目：MYSQL_ROOT_PASSWORD: root用のパスワード```
+```11・28行目：MYSQL_DATABASE: DB名```
+```12・29行目：MYSQL_USER: DB接続用ユーザー名```
+```13・30行目：MYSQL_PASSWORD: DB接続用パスワード```
 
 ## 参考文献
-[Workship MAGAZINE様](https://goworkship.com/magazine/wordpress-docker/)
+[Note](https://note.com/ignorant_kenji/n/nf0d961220338)
